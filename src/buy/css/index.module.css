@@ -1,0 +1,10 @@
+.quantityInput {
+  text-align: center;
+  font-size: 1.125rem;
+  border: 1px solid #9ca3af;
+}
+.quantityInput:focus {
+  border-color: #2c3e50;
+  outline: none;
+  box-shadow: none;
+}

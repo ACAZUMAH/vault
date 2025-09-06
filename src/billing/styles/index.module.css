@@ -1,0 +1,5 @@
+
+.paymentDue {
+    border: 2px solid var(--mantine-color-red-6);
+    background-color: var(--mantine-color-red-0);
+}
