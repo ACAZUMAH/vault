@@ -33,7 +33,7 @@ export const HeaderItems: React.FC<headerItems> = ({ label, route }) => {
         onClick={handleNavigate}
         underline="never"
         style={{
-          padding: "21px 5px",
+          padding: "35px 5px",
           color: "white",
           textDecoration: "none",
           borderBottom: "5px solid",

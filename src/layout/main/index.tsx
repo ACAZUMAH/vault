@@ -16,7 +16,7 @@ const MainLayout = () => {
   
   return (
     <>
-      <AppShell header={{ height: 70 }}>
+      <AppShell header={{ height: 100 }}>
         <AppShell.Header
           style={{
             backgroundColor: scrolled ? theme.colors.dark[7] : "transparent",

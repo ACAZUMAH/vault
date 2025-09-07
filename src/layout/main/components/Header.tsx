@@ -5,14 +5,16 @@ import {
   Container,
   Divider,
   Group,
-  Title,
+  Image,
+  //Title,
 } from "@mantine/core";
-import { navigations } from ".";
+import { navigation } from ".";
 import { HeaderItems } from "./headerItems";
 import React from "react";
 import { Conditional } from "../../../components/conditional/Conditional";
 import { useDisclosure } from "@mantine/hooks";
 import { MainDrawer } from "./mainDrawer";
+import logo from "../../../assets/images/logo1.png";
 
 interface Props {
   scrolled: boolean;
@@ -25,12 +27,15 @@ export const MainHeader: React.FC<Props> = ({ scrolled }) => {
       <Container px="md" h="100%" w="100%" maw={1300}>
         <Group justify="space-between" h="100%">
           <Anchor underline="never">
-            <Title c="#FFD700" fs="italic">
+            <Anchor href="/" underline="never">
+            <Image src={logo} h={85} w={120}/>
+            </Anchor>
+            {/* <Title c="#FFD700" fs="italic">
               Lion Vault
-            </Title>
+            </Title> */}
           </Anchor>
           <Group gap={50} visibleFrom="xl">
-            {navigations.map((navigate, index) => (
+            {navigation.map((navigate, index) => (
               <HeaderItems {...navigate} key={index} />
             ))}
           </Group>

@@ -1,54 +1,38 @@
-//import React from 'react'
-
 import {
-  //Anchor,
+  Anchor,
   Box,
   Container,
   Divider,
-  //Flex,
   Group,
+  Image,
   Stack,
   Text,
   useMantineTheme,
 } from "@mantine/core";
-// import {
-//   IconBrandFacebook,
-//   IconBrandLinkedin,
-//   IconBrandX,
-//   IconBrandYoutube,
-// } from "@tabler/icons-react";
+import logo from "../../../assets/images/logo1.png";
 
 export const MainFooter = () => {
-    const theme = useMantineTheme();
+  const theme = useMantineTheme();
   return (
-    <Box bg={theme.colors.dark[7]}>
+    <Box bg={theme.colors.dark[7]} style={{ borderTopRightRadius: 50, borderTopLeftRadius: 50 }}>
       <Container size="xl" p={40}>
-        <Stack>
-          <Text c="dimmed">Address: </Text>
-          <Text c="dimmed">Email: </Text>
-          <Text c="dimmed">Phone: </Text>
-        </Stack>
+        <Group justify="space-between">
+          <Stack>
+            <Text c="dimmed">Address: </Text>
+            <Text c="dimmed">Email: </Text>
+            <Text c="dimmed">Phone: </Text>
+          </Stack>
+          <Anchor href="/" underline="never">
+            <Image src={logo} h={85} w={120} />
+          </Anchor>
+        </Group>
       </Container>
-      <Divider />
+      <Divider size="xs" />
       <Container w="100%" maw={1300} p={20}>
         <Group justify="space-between">
           <Text ta="center" c="dimmed">
             Copyright &copy; {new Date().getFullYear()} . All rights reserved
           </Text>
-          {/* <Flex justify="flex-end" align="center" gap={5}>
-            <Anchor>
-              <IconBrandLinkedin size={35} stroke={1.5} />
-            </Anchor>
-            <Anchor>
-              <IconBrandFacebook size={35} stroke={1.5} />
-            </Anchor>
-            <Anchor>
-              <IconBrandX size={35} stroke={1.5} />
-            </Anchor>
-            <Anchor>
-              <IconBrandYoutube size={35} stroke={1.5} />
-            </Anchor>
-          </Flex> */}
         </Group>
       </Container>
     </Box>

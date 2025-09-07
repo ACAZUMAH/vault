@@ -6,6 +6,7 @@ import { TrackDelivery } from "./components/TrackDelivery";
 // import { NewsAndFaqs } from "./components/News-Faq";
 import { ContactForm } from "./components/ContactForm";
 import { Confidentiality } from "./components/Confidential";
+import { Testimonials } from "./components/Testimonials";
 
 export const Home: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ export const Home: React.FC = () => {
       <Delivery />
       <Services />
       <TrackDelivery />
-      {/* <NewsAndFaqs /> */}
+      <Testimonials />
       <ContactForm />
       <Confidentiality />
     </>

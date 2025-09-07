@@ -14,6 +14,7 @@ import deliveryTruck from "../../assets/images/truck1.png";
 import { useMediaQuery } from "@mantine/hooks";
 import { useAppNavigation } from "../../hooks/useAppNavigation";
 import { routesEndpoints } from "../../constants";
+import { motion } from "framer-motion";
 
 export const TrackDelivery: React.FC = () => {
   const isTablet = useMediaQuery("(max-width: 1024px)");
@@ -43,7 +44,18 @@ export const TrackDelivery: React.FC = () => {
             </Button>
           </Stack>
           <div>
-            <Image src={deliveryTruck} w={500} />
+            <motion.div 
+              variants={{
+                hidden: { opacity: 0, x: 100 },
+                animate: { opacity: 1, x: 0 },
+              }}
+              initial="hidden"
+              whileInView="animate"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Image src={deliveryTruck} w={500} />
+            </motion.div>
           </div>
         </Group>
       </Container>

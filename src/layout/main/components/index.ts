@@ -1,7 +1,7 @@
 import { routesEndpoints } from "../../../constants";
 import { navItems } from "../interfaces";
 
-export const navigations: navItems[] = [
+export const navigation: navItems[] = [
     {
       label: 'Home',
       route: routesEndpoints.HOME,

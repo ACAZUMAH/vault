@@ -1,5 +1,6 @@
 import {
   Box,
+  Card,
   Center,
   Container,
   Divider,
@@ -7,6 +8,7 @@ import {
   Image,
   Paper,
   rem,
+  SimpleGrid,
   Stack,
   Text,
   Title,
@@ -14,6 +16,12 @@ import {
 } from "@mantine/core";
 import confidential from "../../assets/images/confidential.jpg";
 import { useMediaQuery } from "@mantine/hooks";
+import signature from "../../assets/images/signature.png";
+import delivery from "../../assets/images/Untitled-design-1-1.png";
+import storage from "../../assets/images/image-2.png";
+import certification from "../../assets/images/image-3-1.png";
+import secure from "../../assets/images/image-1.png";
+import { motion } from "framer-motion";
 
 export const Featured = () => {
   const theme = useMantineTheme();
@@ -22,77 +30,90 @@ export const Featured = () => {
 
   return (
     <>
-      {/* Services Banner */}
-      <Box bg={theme.colors.dark[7]} py="lg" visibleFrom="sm">
-        <Container size="xl">
-          <Group justify="space-around" wrap="wrap" gap="md">
+      <Container size="xl" py={isMobile ? 40 : 70}>
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing="lg" mt="1rem">
+          <Card withBorder shadow="md" p="xs" radius="lg">
             <Center>
-              <Text
-                c="white"
-                size={isTablet ? "lg" : "xl"}
-                fs="italic"
-                ta="center"
-              >
-                Safe Vault
-              </Text>
+              <Image src={delivery} h={80} w={80} mb="xs" />
             </Center>
+            <Title ta="center" order={4} fw={490}>
+              FAST DELIVERY
+            </Title>
+            <Text ta="center" size="xs" mt="xs">
+              Enjoy fast & Free delivery on all orders.
+            </Text>
+          </Card>
+          <Card withBorder shadow="md" p="md" radius="lg">
             <Center>
-              <Text
-                c="white"
-                size={isTablet ? "lg" : "xl"}
-                fs="italic"
-                ta="center"
-              >
-                Fast Delivery Services
-              </Text>
+              <Image src={storage} h={80} w={80} mb="xs" />
             </Center>
+            <Title ta="center" order={4} fw={490}>
+              SECURE ORDERING
+            </Title>
+            <Text ta="center" size="xs" mt="xs">
+              We ensure you secure ordering.
+            </Text>
+          </Card>
+          <Card withBorder shadow="md" p="md" radius="lg">
             <Center>
-              <Text
-                c="white"
-                size={isTablet ? "lg" : "xl"}
-                fs="italic"
-                ta="center"
-              >
-                Money Deposit Boxes
-              </Text>
+              <Image src={certification} h={80} w={80} mb="xs" />
             </Center>
+            <Title ta="center" order={4} fw={490}>
+              CERTIFIED PRODUCTS
+            </Title>
+            <Text ta="center" size="xs" mt="xs">
+              Certified products guarantee authenticity.
+            </Text>
+          </Card>
+          <Card withBorder shadow="md" p="md" radius="lg">
             <Center>
-              <Text
-                c="white"
-                size={isTablet ? "lg" : "xl"}
-                fs="italic"
-                ta="center"
-              >
-                Secure Storage
-              </Text>
+              <Image src={secure} h={80} w={80} mb="xs" />
             </Center>
-          </Group>
-        </Container>
-      </Box>
-
-      <Container size="xl" py={isMobile ? 60 : 100}>
-        <Group align="flex-start" gap={isMobile ? "xl" : rem(30)} wrap="wrap">
+            <Title ta="center" order={5} fw={490}>
+              100% GUARANTIED
+            </Title>
+            <Text ta="center" size="xs" mt="xs">
+              We guarantee 100% satisfaction.
+            </Text>
+          </Card>
+        </SimpleGrid>
+        <Group
+          align="flex-start"
+          gap={isMobile ? "xl" : rem(45)}
+          wrap="wrap"
+          mt="7rem"
+        >
           {/* Text Content */}
           <Box w={isMobile ? "100%" : "48%"} maw={isMobile ? "100%" : 600}>
-            <Divider size="xl" w={60} color="#FFD700" mb="xl" />
+            <Divider size="xl" w={60} color="#FFD700" mb="lg" />
 
-            <Title
-              fw={500}
-              size={isMobile ? rem(28) : isTablet ? rem(35) : rem(40)}
-              lh={1.2}
-              mb="xl"
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 100 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              whileInView="animate"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
-              BEST PLACE TO STORE GOLD & DIAMOND!
-            </Title>
-
+              <Title
+                fw={500}
+                size={isMobile ? rem(28) : isTablet ? rem(35) : rem(40)}
+                lh={1.2}
+                mb="lg"
+              >
+                BEST PLACE TO STORE GOLD & DIAMOND!
+              </Title>
+            </motion.div>
             <Text size={isMobile ? "md" : "lg"} lh={1.6} c="dimmed" mb="xl">
               Lion Vault Holdings, and its subsidiaries offer private and
               business safe deposit, private business deposit and private wealth
               management, including investment, trust and brokerage services.
-              Lion Vault Holdings specializes in delivering exceptional,
-              relationship-based service, with a solid [contingent] staffing
-              agencies in the United Kingdom and commitment to responsiveness
-              and action.
+              Imperium Vault Guard Holdings specializes in delivering
+              exceptional, relationship-based service, with a solid contingent
+              staffing agencies in the United Kingdom and commitment to
+              responsiveness and action.
             </Text>
             <Paper
               p="md"
@@ -114,15 +135,8 @@ export const Featured = () => {
                     Chairman & Chief Executive Officer
                   </Text>
                 </Stack>
-                <Title
-                  order={3}
-                  fw="lighter"
-                  fs="italic"
-                  c="dimmed"
-                  size={isMobile ? "lg" : "xl"}
-                >
-                  Signature
-                </Title>
+
+                <Image src={signature} h="80" w="100" />
               </Group>
             </Paper>
           </Box>

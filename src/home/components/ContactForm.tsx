@@ -21,6 +21,7 @@ import {
 } from "@tabler/icons-react";
 import React from "react";
 import { useBookAppointment } from "../hooks/useBookAppointment";
+import { motion } from "framer-motion";
 
 export const ContactForm: React.FC = () => {
   const [firstName, setFirstName] = React.useState("");
@@ -50,9 +51,20 @@ export const ContactForm: React.FC = () => {
       <Group align={"flex-start"} justify={isTablet ? "center" : ""} gap={60}>
         <Box p="xl" pt={80} w="100%" maw={500}>
           <Divider size="xl" w={60} color="#FFD700" />
-          <Title fw="normal" mt="xl">
-            WHAT MAKES US SPECIAL?
-          </Title>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 100 },
+              animate: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            whileInView="animate"
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <Title fw="normal" mt="xl">
+              WHAT MAKES US SPECIAL?
+            </Title>
+          </motion.div>
           <Text mt="xl" c="dimmed" size="md">
             Over 5,000 dedicated employees, working in 17 regional clusters
             around the globe, deliver operational excellence.

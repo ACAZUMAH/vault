@@ -18,7 +18,7 @@ import CountUp from "react-countup";
 
 export const Delivery: React.FC = () => {
   return (
-    <Box bg="#FFD700">
+    <Box bg="#FFD700" mt="xl">
       <Container w="100%" maw={1300} py={30}>
         <SimpleGrid cols={{ base: 2, md: 3, lg: 4 }} spacing="xl" p="xl">
           <Box>
