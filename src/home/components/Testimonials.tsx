@@ -13,20 +13,27 @@ import React from "react";
 import user1 from "../../assets/images/unnamedas1212.png";
 import user2 from "../../assets/images/unnamedarun-kc.png";
 import user3 from "../../assets/images/tamara-bellis-JJriiwCxutM-unsplash-300x300.jpg";
-
+import { motion } from "framer-motion";
 export const Testimonials: React.FC = () => {
   return (
-    <Container w="100%" maw={1300} py={60}>
+    <Container w="100%" maw={1300} py={100}>
       <Title ta="center" order={5} fw={400}>
         TESTIMONIALS
       </Title>
-      <Title ta="center" mt="xs" fw={500} fz={30}>
-        Hear From Our Satisfied Customers –
-      </Title>
-      <Title ta="center" fw={500} fz={30}>
-        Most Trusted Brand
-      </Title>
-
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 100 },
+          animate: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        whileInView="animate"
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <Title ta="center" mt="xs" fw={500} fz={30} mb="lg">
+          Hear From Our Satisfied Customers – <br /> Most Trusted Brand
+        </Title>
+      </motion.div>
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg" mt="xl" mb="xl">
         <Paper withBorder p="md" radius="xl" shadow="md">
           <Group mb="md" gap={2}>
@@ -43,13 +50,11 @@ export const Testimonials: React.FC = () => {
           </Text>
           <Group mt="md">
             <Avatar src={user1} />
-            <Stack>
-              <Title>
-
+            <Stack gap={3}>
+              <Title fw={500} fz={13} order={4}>
+                MICHEAL SMITH
               </Title>
-              <Text>
-                
-              </Text>
+              <Text size="sm">London, UK</Text>
             </Stack>
           </Group>
         </Paper>
@@ -68,9 +73,11 @@ export const Testimonials: React.FC = () => {
           </Text>
           <Group mt="md">
             <Avatar src={user2} />
-            <Stack>
-              <Title></Title>
-              <Text></Text>
+            <Stack gap={3}>
+              <Title fw={500} fz={13} order={4}>
+                SAJAN K C
+              </Title>
+              <Text size="sm">Kathmandu, Nepal</Text>
             </Stack>
           </Group>
         </Paper>
@@ -89,9 +96,11 @@ export const Testimonials: React.FC = () => {
           </Text>
           <Group mt="md">
             <Avatar src={user3} />
-            <Stack>
-              <Title></Title>
-              <Text></Text>
+            <Stack gap={3}>
+              <Title fw={500} fz={13} order={4}>
+                TAMARA BELLIS
+              </Title>
+              <Text size="sm">New York, USA</Text>
             </Stack>
           </Group>
         </Paper>

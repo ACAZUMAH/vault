@@ -21,7 +21,7 @@ export const TrackDelivery: React.FC = () => {
   const navigateToTracking = useAppNavigation(routesEndpoints.TRACKING);
   return (
     <Box bg="whiteSmoke">
-      <Container w="100%" maw={1300} py={50}>
+      <Container w="100%" maw={1300} py={100}>
         <Group align="center" justify={isTablet ? "center" : "space-between"}>
           <Stack gap="xl" maw={700}>
             <Title fw={500}>SECURED DELIVERY 100% GUARANTEED</Title>

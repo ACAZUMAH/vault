@@ -22,6 +22,7 @@ import secure from "../assets/images/secure.jpg";
 import { useMediaQuery } from "@mantine/hooks";
 import { IconCircleCheck } from "@tabler/icons-react";
 import { Confidentiality } from "../home/components/Confidential";
+import { motion } from "framer-motion";
 
 export const About: React.FC = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -64,64 +65,70 @@ export const About: React.FC = () => {
               ta={{ base: "center", md: "left" }}
               pt={isMobile ? rem(100) : rem(180)}
             >
-              <Title
-                order={1}
-                c="white"
-                fw={500}
-                size={isMobile ? rem(40) : isTablet ? rem(48) : rem(64)}
-                lh={1.1}
-                mb="xs"
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                About Us
-              </Title>
-              <Divider
-                size="xl"
-                w={60}
-                color="#FFD700"
-                mb="md"
-                visibleFrom="md"
-              />
-              <Text
-                c="white"
-                maw={{ base: "100%", md: 600 }}
-                mb="xl"
-                size="lg"
-                mt="lg"
-                ta={{ base: "center", md: "left" }}
+                <Title
+                  order={1}
+                  c="white"
+                  fw={500}
+                  size={isMobile ? rem(40) : isTablet ? rem(48) : rem(64)}
+                  lh={1.1}
+                  mb="xs"
+                >
+                  About Us
+                </Title>
+                <Divider
+                  size="xl"
+                  w={60}
+                  color="#FFD700"
+                  mb="md"
+                  visibleFrom="md"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Established in 2005, "Knights Bullion" is a family operated gold
-                bullion and precious metals merchant. Combining experience and
-                expertise with exceptional customer service, we take the time to
-                find out what matters most to our customers and offer tailored
-                packages to suit individual requirements.
-              </Text>
-              <Text
-                c="white"
-                maw={{ base: "100%", md: 600 }}
-                mb="xl"
-                size="lg"
-                ta={{ base: "center", md: "left" }}
+                <Text
+                  c="white"
+                  maw={{ base: "100%", md: 600 }}
+                  mb="xl"
+                  size="lg"
+                  mt="lg"
+                  ta={{ base: "center", md: "left" }}
+                >
+                  Established in 2005, "Knights Bullion" is a family operated
+                  gold bullion and precious metals merchant. Combining
+                  experience and expertise with exceptional customer service, we
+                  take the time to find out what matters most to our customers
+                  and offer tailored packages to suit individual requirements.
+                </Text>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
-                At [Your Company Name], we believe that true wealth deserves
-                uncompromising protection. Established in the United Kingdom,
-                our company was founded on a single guiding principle: to
-                safeguard the world’s most enduring asset with the highest
-                standards of security, discretion, and integrity.
-              </Text>
-              {/* <Text
-                c="white"
-                maw={{ base: "100%", md: 600 }}
-                mb="xl"
-                size="lg"
-                ta={{ base: "center", md: "left" }}
-              >
-                We provide secure storage, bullion management, and bespoke
-                protection solutions to private investors, financial
-                institutions, and international clients. Our services are
-                designed not only to protect assets but to preserve them with
-                the utmost professionalism and transparency for future
-                generations.
-              </Text> */}
+                <Text
+                  c="white"
+                  maw={{ base: "100%", md: 600 }}
+                  mb="xl"
+                  size="lg"
+                  ta={{ base: "center", md: "left" }}
+                >
+                  At [Your Company Name], we believe that true wealth deserves
+                  uncompromising protection. Established in the United Kingdom,
+                  our company was founded on a single guiding principle: to
+                  safeguard the world’s most enduring asset with the highest
+                  standards of security, discretion, and integrity.
+                </Text>
+              </motion.div>
             </Box>
           </Container>
         </Box>
@@ -169,7 +176,18 @@ export const About: React.FC = () => {
           <Group align="flex-start" gap="xl">
             <Image src={invest} w={600} />
             <Stack gap="md" maw={600} mt="lg">
-              <Title>Why Choose Us?</Title>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 100 },
+                  animate: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                whileInView="animate"
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <Title>Why Choose Us?</Title>
+              </motion.div>
               <Divider size="xl" w={60} color="#FFD700" mb="md" />
               <List
                 spacing="xl"
@@ -212,7 +230,18 @@ export const About: React.FC = () => {
       <Container w="100%" maw={1300} py={10}>
         <Group align="flex-start" gap="3rem">
           <Stack gap="md" maw={600} mt="lg">
-            <Title>Our Commitment to Security</Title>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 100 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              whileInView="animate"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Title>Our Commitment to Security</Title>
+            </motion.div>
             <Divider size="xl" w={60} color="#FFD700" mb="md" />
             <List
               spacing="xl"

@@ -15,6 +15,7 @@ import React from "react";
 import bg from "../assets/images/contact.jpg";
 import { Confidentiality } from "../home/components/Confidential";
 import { useBookAppointment } from "./hooks/useBookAppointment";
+import { motion } from "framer-motion";
 
 export const Contacts: React.FC = () => {
   const theme = useMantineTheme();
@@ -61,22 +62,55 @@ export const Contacts: React.FC = () => {
       <Container w="100%" maw={1300} py={60}>
         <Group justify="space-between" align="flex-start" gap={50}>
           <Box>
-            <Title order={2}>VISIT US IN STORE</Title>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 100 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              whileInView="animate"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Title order={2}>VISIT US IN STORE</Title>
+            </motion.div>
           </Box>
           <Box maw={400}>
-            <Text>
-              We always value the opportunity to meet our customers in person.
-              We encourage you to meet our team and see our products in store;
-              we can answer any questions you may have and explore your
-              investment opportunities. Knights Bullion is open 6 days a week.
-            </Text>
-            <Text mt="md">
-              Book an appointment ahead of your visit to guarantee time with one
-              of our experts.
-            </Text>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 100 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              whileInView="animate"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Text>
+                We always value the opportunity to meet our customers in person.
+                We encourage you to meet our team and see our products in store;
+                we can answer any questions you may have and explore your
+                investment opportunities. Knights Bullion is open 6 days a week.
+              </Text>
+              <Text mt="md">
+                Book an appointment ahead of your visit to guarantee time with
+                one of our experts.
+              </Text>
+            </motion.div>
           </Box>
           <Box maw={200}>
-            <Text>42 Wood St Stratford-upon-Avon Warwickshire CV37 6JG</Text>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 100 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              whileInView="animate"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Text>42 Wood St Stratford-upon-Avon Warwickshire CV37 6JG</Text>
+            </motion.div>
           </Box>
         </Group>
       </Container>
@@ -130,7 +164,7 @@ export const Contacts: React.FC = () => {
                 </Group>
               </Box>
             </Box>
-            <Box bg={theme.colors.dark[7]} p="xl" pt={80} w="100%" maw={700}>
+            <Box bg={theme.colors.dark[7]} p="xl" pt={80} w="100%" maw={700} style={{ borderRadius: 70 }}>
               <Stack>
                 <Group grow>
                   <TextInput

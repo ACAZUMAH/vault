@@ -70,7 +70,7 @@ export const HeroSection = () => {
         >
           <Group
             justify="space-between"
-            pt={isMobile ? rem(80) : rem(120)}
+            pt={isMobile ? rem(80) : rem(150)}
             align="flex-start"
           >
             <Stack
@@ -243,14 +243,14 @@ export const HeroSection = () => {
             </Stack>
 
             <Box style={{ position: "relative" }} visibleFrom="md">
-              <Stack gap="xl" mt="xl" style={{ position: "relative" }}>
+              <Stack gap="xl" style={{ position: "relative" }}>
                 <motion.div
                   style={{ rotate: r1 }}
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Image
-                    src={goldBar1 || "/placeholder.svg"}
+                    src={goldBar1}
                     h={100}
                     w={100}
                     style={{
@@ -265,7 +265,7 @@ export const HeroSection = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Image
-                    src={goldBar2 || "/placeholder.svg"}
+                    src={goldBar2}
                     h={80}
                     w={80}
                     style={{
@@ -280,7 +280,7 @@ export const HeroSection = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Image
-                    src={goldBar1 || "/placeholder.svg"}
+                    src={goldBar1}
                     h={60}
                     w={60}
                     style={{
@@ -295,7 +295,7 @@ export const HeroSection = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Image
-                    src={goldBar2 || "/placeholder.svg"}
+                    src={goldBar2}
                     h={50}
                     w={50}
                     style={{

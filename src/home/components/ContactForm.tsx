@@ -102,7 +102,7 @@ export const ContactForm: React.FC = () => {
             </Group>
           </SimpleGrid>
         </Box>
-        <Box bg={theme.colors.dark[7]} p="xl" pt={80} w="100%" maw={700}>
+        <Box bg={theme.colors.dark[7]} p="xl" pt={80} w="100%" maw={700} style={{ borderRadius: 70 }}>
           <Stack>
             <Group grow>
               <TextInput
