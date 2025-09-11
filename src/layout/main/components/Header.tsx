@@ -26,13 +26,8 @@ export const MainHeader: React.FC<Props> = ({ scrolled }) => {
     <>
       <Container px="md" h="100%" w="100%" maw={1300}>
         <Group justify="space-between" h="100%">
-          <Anchor underline="never">
-            <Anchor href="/" underline="never">
-            <Image src={logo} h={85} w={120}/>
-            </Anchor>
-            {/* <Title c="#FFD700" fs="italic">
-              Lion Vault
-            </Title> */}
+          <Anchor href="/" underline="never">
+              <Image src={logo} h={85} w={120} />
           </Anchor>
           <Group gap={50} visibleFrom="xl">
             {navigation.map((navigate, index) => (

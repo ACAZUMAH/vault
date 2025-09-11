@@ -70,7 +70,7 @@ export const HeroSection = () => {
         >
           <Group
             justify="space-between"
-            pt={isMobile ? rem(80) : rem(150)}
+            pt={isMobile ? rem(140) : rem(150)}
             align="flex-start"
           >
             <Stack

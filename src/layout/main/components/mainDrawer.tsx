@@ -9,6 +9,9 @@ export const MainDrawer: React.FC<DrawerProps> = ({ opened, onClose }) => {
   const navigateToHome = useAppNavigation(routesEndpoints.HOME);
   const navigateToSave = useAppNavigation(routesEndpoints.SAVE);
   const navigateToBuy = useAppNavigation(routesEndpoints.BUY_SELL);
+  const navigateToAbout = useAppNavigation(routesEndpoints.ABOUT);
+  const navigateToContact = useAppNavigation(routesEndpoints.CONTACT);
+
   return (
     <>
       <Drawer opened={opened} onClose={onClose} position="right">
@@ -36,9 +39,16 @@ export const MainDrawer: React.FC<DrawerProps> = ({ opened, onClose }) => {
             }}
           />
           <Divider />
-          <NavLink p={15} label="About Us" />
+          <NavLink p={15} label="About Us" onClick={() => {
+            navigateToAbout();
+            onClose();
+          }}/>
           <Divider />
-          <NavLink p={15} label="Contact" />
+          <NavLink p={15} label="Contact" 
+          onClick={() => {
+            navigateToContact();
+            onClose();
+          }}/>
         </div>
       </Drawer>
     </>

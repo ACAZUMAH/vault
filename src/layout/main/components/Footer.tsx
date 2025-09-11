@@ -14,12 +14,20 @@ import logo from "../../../assets/images/logo1.png";
 export const MainFooter = () => {
   const theme = useMantineTheme();
   return (
-    <Box bg={theme.colors.dark[7]} style={{ borderTopRightRadius: 50, borderTopLeftRadius: 50 }}>
+    <Box
+      pt={80}
+      bg={theme.colors.dark[7]}
+      style={{ borderTopRightRadius: 50, borderTopLeftRadius: 50 }}
+    >
       <Container size="xl" p={40}>
-        <Group justify="space-between">
+        <Group justify="space-between" pb="xl">
           <Stack>
-            <Text c="dimmed">Address: </Text>
-            <Text c="dimmed">Email: </Text>
+            <Text c="dimmed">
+              Address: 7th floor, 3 Shortlands, London W6 8DA, United Kingdom
+            </Text>
+            <Anchor underline="never" href="mailto:info@imperiumvaultguard.com">
+              <Text c="dimmed">Email: info@imperiumvaultguard.com</Text>
+            </Anchor>
             <Text c="dimmed">Phone: </Text>
           </Stack>
           <Anchor href="/" underline="never">

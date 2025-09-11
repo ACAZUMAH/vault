@@ -1,4 +1,5 @@
 import {
+  Anchor,
   BackgroundImage,
   Box,
   Button,
@@ -128,7 +129,12 @@ export const Contacts: React.FC = () => {
                 <Text size="xl" fw={500}>
                   EMAIL US
                 </Text>
-                <Text>..........................</Text>
+                <Anchor
+                  underline="never"
+                  href="mailto:info@imperiumvaultguard.com"
+                >
+                  <Text>info@imperiumvaultguard.com</Text>
+                </Anchor>
               </Box>
               <Box mt="md">
                 <Text size="xl" fw={500} mb="md">
@@ -164,7 +170,14 @@ export const Contacts: React.FC = () => {
                 </Group>
               </Box>
             </Box>
-            <Box bg={theme.colors.dark[7]} p="xl" pt={80} w="100%" maw={700} style={{ borderRadius: 70 }}>
+            <Box
+              bg={theme.colors.dark[7]}
+              p="xl"
+              pt={80}
+              w="100%"
+              maw={700}
+              style={{ borderRadius: 70 }}
+            >
               <Stack>
                 <Group grow>
                   <TextInput

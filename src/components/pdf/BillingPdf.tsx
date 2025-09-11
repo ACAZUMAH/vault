@@ -238,7 +238,7 @@ export function getInvoiceHtml({
     </style>
   </head>
   <body>
-    <h1 class="com" >Lion Vault</h1>
+    <h1 class="com" >Imperium Vault Guard</h1>
     <div class="title">Gold Storage Facility – Annual Bill</div>
     <div class="client-info">
       <div>Client Name: ${clientName}</div>
@@ -333,7 +333,7 @@ export const PaymentPDf = (data: PaymentData) => {
             </style>
           </head>
           <body>
-            <h1 class="com" >Lion Vault</h1>
+            <h1 class="com" >Imperium Vault Guard</h1>
             <div class="header">
               <h1>Payment Invoice</h1>
               <p>Invoice #INV-${Date.now().toString().slice(-8)}</p>
@@ -383,7 +383,7 @@ export const PaymentPDf = (data: PaymentData) => {
             
             <div style="margin-top: 40px; text-align: center; color: #666;">
               <p>Thank you for your business!</p>
-              <p>Company Name | 123 Business St | City, State 12345 | (555) 123-4567</p>
+              <p>Imperium Vault Guard | 7th floor, 3 Shortlands | London W6 8DA | (555) 123-4567</p>
             </div>
           </body>
         </html>
