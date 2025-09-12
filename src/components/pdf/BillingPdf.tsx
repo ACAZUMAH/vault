@@ -87,6 +87,7 @@ interface InvoicePDFProps {
   invoiceNo: string;
   dateIssued: string;
   dueDate: string;
+  amount: number;
 }
 
 export const InvoicePDF: React.FC<InvoicePDFProps> = ({
@@ -218,6 +219,7 @@ export function getInvoiceHtml({
   invoiceNo,
   dateIssued,
   dueDate,
+  amount
 }: InvoicePDFProps): string {
   return `
 <!DOCTYPE html>
@@ -257,32 +259,32 @@ export function getInvoiceHtml({
       <tr>
         <td>Vault Storage Fee</td>
         <td>£3,500/month × 12 months</td>
-        <td>£42,000.00</td>
+        <td>£${(amount * 72.92 / 100).toFixed(2)}</td>
       </tr>
       <tr>
         <td>Insurance Premium (Full value)</td>
         <td>Based on asset value</td>
-        <td>£9,600.00</td>
+        <td>£${(amount * 16.67 / 100).toFixed(2)}</td>
       </tr>
       <tr>
         <td>Annual Security Surcharge</td>
         <td>CCTV, biometric access, etc.</td>
-        <td>£2,400.00</td>
+        <td>£${(amount * 4.17 / 100).toFixed(2)}</td>
       </tr>
       <tr>
         <td>Administrative & Handling Fees</td>
         <td>Flat annual charge</td>
-        <td>£1,200.00</td>
+        <td>£${(amount * 2.08 / 100).toFixed(2)}</td>
       </tr>
       <tr>
         <td>Audit & Compliance Maintenance</td>
         <td>Annual external audit costs</td>
-        <td>£1,200.00</td>
+        <td>£${(amount * 2.08 / 100).toFixed(2)}</td>
       </tr>
       <tr>
         <td>Environmental Controls (Vault)</td>
         <td>Temperature/humidity control</td>
-        <td>£600.00</td>
+        <td>£${(amount * 1.04 / 100).toFixed(2)}</td>
       </tr>
       <tr>
         <td>VAT (0% on pure investment gold)</td>
@@ -291,14 +293,14 @@ export function getInvoiceHtml({
       </tr>
       <tr class="total-row">
         <td colspan="2">TOTAL AMOUNT DUE</td>
-        <td>£57,600.00</td>
+        <td>£${amount}</td>
       </tr>
     </table>
     <div class="footer">
       <div>Reference: GV-2025-0147</div>
       <div>Sort Code: 40-51-62</div>
       <div>Account Number: 12345678</div>
-      <div>Account Name: Regal Vaults Secure Storage Ltd</div>
+      <div>Account Name: Imperium Vault Guard</div>
       <div>Bank: HSBC UK</div>
       <div>Payment Instructions:</div>
     </div>
@@ -383,7 +385,7 @@ export const PaymentPDf = (data: PaymentData) => {
             
             <div style="margin-top: 40px; text-align: center; color: #666;">
               <p>Thank you for your business!</p>
-              <p>Imperium Vault Guard | 7th floor, 3 Shortlands | London W6 8DA | (555) 123-4567</p>
+              <p>Imperium Vault Guard | 7th floor, 3 Shortlands | London W6 8DA | +44 (736) 706-8134</p>
             </div>
           </body>
         </html>

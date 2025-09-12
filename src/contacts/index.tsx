@@ -123,7 +123,7 @@ export const Contacts: React.FC = () => {
                 <Text size="xl" fw={500}>
                   CALL US
                 </Text>
-                <Text>+44 1234 567890</Text>
+                <Text>+44 (736) 706-8134</Text>
               </Box>
               <Box mt="md">
                 <Text size="xl" fw={500}>

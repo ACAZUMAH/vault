@@ -64,7 +64,7 @@ export const User: React.FC = () => {
         <Container size="md" mt={40}>
           <Grid gutter="xl">
             <Grid.Col span={5}>
-              <Image src={user?.image_url!} h={250} mb="md" mr="md" />
+              <Image src={user?.image_url!} h={250} mb="md" mr="md" fit="contain"/>
               <Title order={3} fw={500} c="gray.7">
                 FIRST NAME
               </Title>

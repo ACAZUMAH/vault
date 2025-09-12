@@ -28,7 +28,7 @@ export const MainFooter = () => {
             <Anchor underline="never" href="mailto:info@imperiumvaultguard.com">
               <Text c="dimmed">Email: info@imperiumvaultguard.com</Text>
             </Anchor>
-            <Text c="dimmed">Phone: </Text>
+            <Text c="dimmed">Phone: +44 (736) 706-8134</Text>
           </Stack>
           <Anchor href="/" underline="never">
             <Image src={logo} h={85} w={120} />

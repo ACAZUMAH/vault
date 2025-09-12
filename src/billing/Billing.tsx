@@ -30,6 +30,7 @@ import { formatDate, getPreviousYearDate } from "../helpers/dates";
 import { useAppNavigation } from "../hooks/useAppNavigation";
 import { routesEndpoints } from "../constants";
 import { Conditional } from "../components/conditional/Conditional";
+import { formatCurrencyGBP } from "../helpers/currency";
 
 export const Billing: React.FC = () => {
   const [loadingPdf, setLoadingPdf] = useState(false);
@@ -78,24 +79,34 @@ export const Billing: React.FC = () => {
       setLoadingPdf(true);
       const html = getInvoiceHtml({
         clientName: `${user.firstName} ${user.lastName}`,
-        facilityName: "Lion Vault",
+        facilityName: "Imperium Vault Guard",
         billingPeriod: `${getPreviousYearDate(
           new Date(dueDate)
         )} - ${formatDate(new Date(dueDate))}`,
         invoiceNo: invoiceNumber,
         dateIssued: formatDate(new Date()),
         dueDate: formatDate(new Date(dueDate)),
+        amount: parseFloat(
+          formatCurrencyGBP(
+            billingHistory.find((inv) => inv.invoice_number === invoiceNumber)
+              ?.amount_due || 0,
+            false
+          ).replace(/[^0-9.]/g, "")
+        ),
       });
       const printWindow = window.open("", "_blank", "width=900,height=1200");
       if (printWindow) {
         printWindow.document.write(html);
-        printWindow.document.close();
         printWindow.print();
-        showNotification({
-          title: "Download Successful",
-          message: `Invoice ${invoiceNumber} downloaded successfully.`,
-          color: "Blue",
-        });
+        printWindow.onafterprint = () => {
+          showNotification({
+            title: "Download Successful",
+            message: `Invoice ${invoiceNumber} downloaded successfully.`,
+            color: "Blue",
+          });
+          printWindow.close();
+        };
+        printWindow.document.close();
       }
       setLoadingPdf(false);
     } catch (error) {
@@ -193,9 +204,7 @@ export const Billing: React.FC = () => {
               later.
             </Alert>
           </Conditional>
-          <Conditional
-            condition={!loading && !error}
-          >
+          <Conditional condition={!loading && !error}>
             {billingHistory.map((invoice) => (
               <Paper
                 key={invoice.id}
