@@ -28,7 +28,7 @@ export const MoneyAndTreasure: React.FC<MoneyAndTreasureProps> = ({
               locking systems and located in high-security vaults, they provide
               the perfect solution for storing cash, jewelry, gold, documents,
               and other precious assets.Choose trust. Choose security. Choose
-              [Your Company Name] for safeguarding what matters most.
+              Imperium Vault Guard for safeguarding what matters most.
             </Text>
           </Stack>
         </Box>

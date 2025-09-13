@@ -91,7 +91,7 @@ export const Contacts: React.FC = () => {
                 We always value the opportunity to meet our customers in person.
                 We encourage you to meet our team and see our products in store;
                 we can answer any questions you may have and explore your
-                investment opportunities. Knights Bullion is open 6 days a week.
+                investment opportunities. Imperium Vault Guard is open 6 days a week.
               </Text>
               <Text mt="md">
                 Book an appointment ahead of your visit to guarantee time with
@@ -110,7 +110,7 @@ export const Contacts: React.FC = () => {
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Text>42 Wood St Stratford-upon-Avon Warwickshire CV37 6JG</Text>
+              <Text>7th floor, 3 Shortlands, London W6 8DA, United Kingdom</Text>
             </motion.div>
           </Box>
         </Group>

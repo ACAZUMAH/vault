@@ -23,7 +23,7 @@ export const SafeAndSecure: React.FC<SafeAndSecureProps> = ({
               </Title>
             </Group>
             <Text c="dimmed">
-              At [Your Company Name], we go beyond standard courier services by
+              At Imperium Vault Guard, we go beyond standard courier services by
               offering end-to-end security, real-time tracking, and personalized
               delivery solutions. Whether you’re sending confidential documents,
               valuable assets, or sensitive packages, our dedicated team ensures

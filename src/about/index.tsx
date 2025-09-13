@@ -102,7 +102,7 @@ export const About: React.FC = () => {
                   mt="lg"
                   ta={{ base: "center", md: "left" }}
                 >
-                  Established in 2005, "Knights Bullion" is a family operated
+                  Established in 2005, Imperium Vault Guard is a family operated
                   gold bullion and precious metals merchant. Combining
                   experience and expertise with exceptional customer service, we
                   take the time to find out what matters most to our customers
@@ -122,7 +122,7 @@ export const About: React.FC = () => {
                   size="lg"
                   ta={{ base: "center", md: "left" }}
                 >
-                  At [Your Company Name], we believe that true wealth deserves
+                  At Imperium Vault Guard, we believe that true wealth deserves
                   uncompromising protection. Established in the United Kingdom,
                   our company was founded on a single guiding principle: to
                   safeguard the world’s most enduring asset with the highest
@@ -133,7 +133,7 @@ export const About: React.FC = () => {
           </Container>
         </Box>
       </BackgroundImage>
-      <Container w="100%" maw={1300} py={70}>
+      <Container w="100%" maw={1300} py={80}>
         <SimpleGrid
           cols={{ base: 1, md: 3 }}
           spacing="xl"
@@ -227,7 +227,7 @@ export const About: React.FC = () => {
           </Group>
         </Container>
       </Box>
-      <Container w="100%" maw={1300} py={10}>
+      <Container w="100%" maw={1300}>
         <Group align="flex-start" gap="3rem">
           <Stack gap="md" maw={600} mt="lg">
             <motion.div

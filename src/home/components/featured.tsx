@@ -107,7 +107,7 @@ export const Featured = () => {
               </Title>
             </motion.div>
             <Text size={isMobile ? "md" : "lg"} lh={1.6} c="dimmed" mb="xl">
-              Lion Vault Holdings, and its subsidiaries offer private and
+              Imperium Vault Guard Holdings, and its subsidiaries offer private and
               business safe deposit, private business deposit and private wealth
               management, including investment, trust and brokerage services.
               Imperium Vault Guard Holdings specializes in delivering
