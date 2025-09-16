@@ -78,7 +78,7 @@ export const Billing: React.FC = () => {
     try {
       setLoadingPdf(true);
       const html = getInvoiceHtml({
-        clientName: `${user.firstName} ${user.lastName}`,
+        clientName: `${user.first_name} ${user.last_name}`,
         facilityName: "Imperium Vault Guard",
         billingPeriod: `${getPreviousYearDate(
           new Date(dueDate)

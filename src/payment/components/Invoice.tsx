@@ -222,7 +222,7 @@ export const ShowInvoice: React.FC<InvoiceProps> = ({
                   processed
                 </Text>
                 <Text size="sm">
-                  • For questions, contact support at support@company.com
+                  • For questions, contact support at info@imperiumvaultguard.com
                 </Text>
               </Stack>
             </Alert>
