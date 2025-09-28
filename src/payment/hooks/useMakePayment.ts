@@ -15,13 +15,17 @@ export function useCreatePayment() {
     setError(null);
     setSuccess(false);
 
-    try {
-      const { data, error } = await supabase
-        .from('payment')
-        .insert([paymentData])
-        .select();
+  try {
+      if (!supabase || typeof supabase === 'string') {
+        throw new Error('Supabase client is not initialized');
+      }
 
-      if (error) setError(error.message)
+      const { data, error } = await supabase.from('payment').insert([paymentData]).select();
+
+      if (error) {
+        setError(error.message);
+        return null;
+      }
 
       setSuccess(true);
       return data;

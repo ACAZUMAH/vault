@@ -16,6 +16,10 @@ export const useLogin = () => {
   const login = async ({ email, password }: LoginInput) => {
     setLoading(true);
     try {
+      if (!supabase || typeof supabase === "string") {
+        throw new Error("Supabase client is not initialized");
+      }
+      
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -53,11 +57,15 @@ export const useLogin = () => {
 export const useVerifyVaultNumber = () => {
   const [loading, setLoading] = useState(false);
   const navigateToUser = useAppNavigation(routesEndpoints.USER);
-    const { loginUser } = useAppAuthentication();
+  const { loginUser } = useAppAuthentication();
 
   const verifyVaultNumber = async (vaultNumber: string) => {
     setLoading(true);
     try {
+      if (!supabase || typeof supabase === "string") {
+        throw new Error("Supabase client is not initialized");
+      }
+
       const { data, error } = await supabase
         .from("user")
         .select("*")

@@ -5,5 +5,4 @@ const supabaseKey = `${import.meta.env.VITE_SUPABASE_KEY}`;
 
 
 export const supabase = (supabaseUrl && supabaseKey)
-  ? createClient(supabaseUrl, supabaseKey)
-  : undefined;
+  && createClient(supabaseUrl, supabaseKey)

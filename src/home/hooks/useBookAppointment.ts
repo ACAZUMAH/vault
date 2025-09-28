@@ -17,6 +17,10 @@ export const useBookAppointment = () => {
     setLoading(true);
     setError(null);
     try {
+      if (!supabase || typeof supabase === "string") {
+        throw new Error("Supabase client is not initialized");
+      }
+      
       const { error, status } = await supabase
         .from("appointments")
         .insert([data]);

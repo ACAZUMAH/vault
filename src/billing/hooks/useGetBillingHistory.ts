@@ -1,40 +1,43 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import { supabase } from "../../services/supaBase";
 
 export function useBillingHistory(userId: string) {
-  const [billingHistory, setBillingHistory] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [billingHistory, setBillingHistory] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!userId) {
-      setBillingHistory([])
-      setLoading(false)
-      return
+      setBillingHistory([]);
+      setLoading(false);
+      return;
     }
 
     const fetchBillingHistory = async () => {
-      setLoading(true)
-      setError(null)
+      setLoading(true);
+      setError(null);
 
       try {
+        if (!supabase || typeof supabase === "string") {
+          throw new Error("Supabase client is not initialized");
+        }
         const { data, error } = await supabase
-          .from('billing_history')
-          .select('*')
-          .eq('user_id', userId)
-          .order('due_date', { ascending: false }) // newest first
+          .from("billing_history")
+          .select("*")
+          .eq("user_id", userId)
+          .order("due_date", { ascending: false }); // newest first
 
-        if (error) throw error
+        if (error) throw error;
 
-        setBillingHistory(data || [])
+        setBillingHistory(data || []);
       } catch (err: any) {
-        setError(err?.message)
+        setError(err?.message);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
-    fetchBillingHistory()
-  }, [userId])
+    };
+    fetchBillingHistory();
+  }, [userId]);
 
-  return { billingHistory, loading, error }
+  return { billingHistory, loading, error };
 }
