@@ -14,6 +14,9 @@ export const useTracking = (trackingNumber: string) => {
       setError(null);
 
       try {
+        if (!supabase || typeof supabase === "string") {
+          throw new Error("Supabase client is not initialized");
+        }
         // Fetch the shipment
         const { data: shipment, error: shipmentError } = await supabase
           .from("shipments")
@@ -40,7 +43,7 @@ export const useTracking = (trackingNumber: string) => {
             status: shipment.current_status,
             location: shipment.current_location,
             description: shipment.current_description,
-            date: shipment.last_updated
+            date: shipment.last_updated,
           },
           contactSupport: shipment.contact_support,
           origin: shipment.origin_location,
@@ -50,8 +53,8 @@ export const useTracking = (trackingNumber: string) => {
             location: e.location,
             description: e.description,
             event_type: e.event_type,
-            date: e.event_time
-          }))
+            date: e.event_time,
+          })),
         };
 
         setData(formattedData);
@@ -66,4 +69,4 @@ export const useTracking = (trackingNumber: string) => {
   }, [trackingNumber]);
 
   return { data, loading, error };
-}
+};
