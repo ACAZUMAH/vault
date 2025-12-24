@@ -78,6 +78,7 @@ export const useVerifyVaultNumber = () => {
           message: error.message,
           color: "red",
         });
+        console.error("Error verifying vault number:", error);
         return null;
       }
       if (data) {
